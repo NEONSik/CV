@@ -1,0 +1,77 @@
+//main settings
+@mainBackGround: #424242;
+@mainContainerHeigth: 1480px;
+@mainContainerWidth: 1920px;
+
+//header values
+@headerBackGround: #FF4081;
+@headerWidth: 100%;
+@headerHeigth: 12%;
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar-track{
+  background: #616161;
+}
+body::-webkit-scrollbar-thumb{
+  background: #9E9E9E;
+}
+::-webkit-scrollbar{
+  width: 6px;
+}
+.app {
+  &-main-container {
+    width: @mainContainerWidth;
+    height: @mainContainerHeigth;
+    background: @mainBackGround;
+  }
+
+  //header
+  &-header {
+    width: @headerWidth;
+    height: @headerHeigth;
+    background: @headerBackGround;
+  }
+}
+
+@media (max-width: 1520px) {
+  .app-main-container {
+    width: 1400px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .app-main-container {
+    width: 1300px;
+  }
+}
+@media (max-width: 1024px) {
+  .app-main-container {
+    width: 1026px;
+  }
+}
+@media (max-width: 990px) {
+  .app-main-container {
+    width: 790px;
+  }
+}
+
+@media (max-width: 690px) {
+  .app-main-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 460px) {
+  .app-main-container {
+    width: 421px;
+  }
+}
+@media (max-width: 375px) {
+  .app-main-container {
+    width: 385px;
+  }
+}
