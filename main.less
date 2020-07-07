@@ -6,22 +6,26 @@
 //header values
 @headerBackGround: #FF4081;
 @headerWidth: 100%;
-@headerHeigth: 12%;
+@headerHeigth: 10%;
 
 body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
 }
-body::-webkit-scrollbar-track{
+
+body::-webkit-scrollbar-track {
   background: #616161;
 }
-body::-webkit-scrollbar-thumb{
+
+body::-webkit-scrollbar-thumb {
   background: #9E9E9E;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
   width: 6px;
 }
+
 .app {
   &-main-container {
     width: @mainContainerWidth;
@@ -34,44 +38,151 @@ body::-webkit-scrollbar-thumb{
     width: @headerWidth;
     height: @headerHeigth;
     background: @headerBackGround;
+    position: relative;
+
+    &-svg-groups {
+      position: absolute;
+      top: 10%;
+      right: 25%;
+      width: 15%;
+      height: 25%;
+    }
+  }
+
+  &-svg-groups {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    &-el {
+      list-style: none;
+      margin-left: 10%;
+&-line{
+  position: absolute;
+  transform: .3s;
+}
+      &-link {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 10%;
+        line-height: 100%;
+        font-size: 100%;
+        text-decoration: none;
+        color:#262626;
+        transition: .3s;
+      }
+
+    }
   }
 }
 
-@media (max-width: 1520px) {
+
+//svg line animation
+
+svg{
+  margin:15px;
+}
+
+ul li span:nth-child(2),
+ul li span:nth-child(4)
+{
+  width: 10%;
+  height: 100%;
+  background: #9C27B0;
+}
+ul li span:nth-child(2){
+  top:0;
+  left:0;
+  transform: scale(0);
+  transform-origin:top;
+  transition: transform .3s;
+
+}
+ul li a:hover  span:nth-child(2){
+  transform: scale(1);
+  transform-origin:bottom;
+  transition: transform .3s;
+}
+
+ul li span:nth-child(4){
+  top:0;
+  right:0;
+  transform: scale(0);
+  transform-origin:bottom;
+  transition: transform .3s;
+
+}
+ul li a:hover  span:nth-child(4){
+  transform: scale(1);
+  transform-origin:top;
+  transition: transform .3s;
+}
+
+//media requsets
+@media (max-width: 1300px) {
   .app-main-container {
-    width: 1400px;
+    height: 1700px;
   }
+  //.app-header-svg-groups{
+  //  position: absolute;
+  //  right: 8%;
+  //}
 }
-
 @media (max-width: 1200px) {
   .app-main-container {
     width: 1300px;
-  }
-}
-@media (max-width: 1024px) {
-  .app-main-container {
-    width: 1026px;
-  }
-}
-@media (max-width: 990px) {
-  .app-main-container {
-    width: 790px;
+    height: 1700px;
+    //.app-header-svg-groups{
+    //  right: 38%;
+    //}
   }
 }
 
-@media (max-width: 690px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .app-main-container {
-    width: 100%;
+    width: 1199px;
+    height: 1700px;
   }
 }
 
-@media (max-width: 460px) {
+@media (min-width: 768px) and (max-width: 991px){
+.app-main-container {
+    width: 1000px;
+  height: 1700px;
+
+}
+}
+
+@media (max-width: 767px) {
   .app-main-container {
-    width: 421px;
+    height: 1700px;
+    width: 766px;
+  }
+  //.app-header-svg-groups{
+  //  right: 32%;
+  //
+  //}
+}
+
+@media (max-width: 480px) {
+  .app-main-container {
+    width: 479px;
+    height: 1700px;
+    .app-header-svg-groups{
+      right: 52%;
+    }
   }
 }
-@media (max-width: 375px) {
+
+@media (max-width: 320px) {
   .app-main-container {
-    width: 385px;
+    height: 1700px;
+    width: 320px;
+  }
+  .app-header-svg-groups{
+    //position: absolute;
+    //right: 400%;
+    margin-right: 100px;
   }
 }

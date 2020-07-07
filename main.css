@@ -19,42 +19,119 @@ body::-webkit-scrollbar-thumb {
 }
 .app-header {
   width: 100%;
-  height: 12%;
+  height: 10%;
   background: #FF4081;
+  position: relative;
 }
-@media (max-width: 1520px) {
+.app-header-svg-groups {
+  position: absolute;
+  top: 10%;
+  right: 25%;
+  width: 15%;
+  height: 25%;
+}
+.app-svg-groups {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.app-svg-groups-el {
+  list-style: none;
+  margin-left: 10%;
+}
+.app-svg-groups-el-line {
+  position: absolute;
+  transform: 0.3s;
+}
+.app-svg-groups-el-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 10%;
+  line-height: 100%;
+  font-size: 100%;
+  text-decoration: none;
+  color: #262626;
+  transition: 0.3s;
+}
+svg {
+  margin: 15px;
+}
+ul li span:nth-child(2),
+ul li span:nth-child(4) {
+  width: 10%;
+  height: 100%;
+  background: #9C27B0;
+}
+ul li span:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transform-origin: top;
+  transition: transform 0.3s;
+}
+ul li a:hover span:nth-child(2) {
+  transform: scale(1);
+  transform-origin: bottom;
+  transition: transform 0.3s;
+}
+ul li span:nth-child(4) {
+  top: 0;
+  right: 0;
+  transform: scale(0);
+  transform-origin: bottom;
+  transition: transform 0.3s;
+}
+ul li a:hover span:nth-child(4) {
+  transform: scale(1);
+  transform-origin: top;
+  transition: transform 0.3s;
+}
+@media (max-width: 1300px) {
   .app-main-container {
-    width: 1400px;
+    height: 1700px;
   }
 }
 @media (max-width: 1200px) {
   .app-main-container {
     width: 1300px;
+    height: 1700px;
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .app-main-container {
-    width: 1026px;
+    width: 1199px;
+    height: 1700px;
   }
 }
-@media (max-width: 990px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .app-main-container {
-    width: 790px;
+    width: 1000px;
+    height: 1700px;
   }
 }
-@media (max-width: 690px) {
+@media (max-width: 767px) {
   .app-main-container {
-    width: 100%;
+    height: 1700px;
+    width: 766px;
   }
 }
-@media (max-width: 460px) {
+@media (max-width: 480px) {
   .app-main-container {
-    width: 421px;
+    width: 479px;
+    height: 1700px;
+  }
+  .app-main-container .app-header-svg-groups {
+    right: 52%;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 320px) {
   .app-main-container {
-    width: 385px;
+    height: 1700px;
+    width: 320px;
+  }
+  .app-header-svg-groups {
+    margin-right: 100px;
   }
 }
 /*# sourceMappingURL=main.css.map */
