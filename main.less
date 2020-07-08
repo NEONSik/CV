@@ -2,6 +2,7 @@
 @mainBackGround: #424242;
 @mainContainerHeigth: 1480px;
 @mainContainerWidth: 1920px;
+@mainFontfamily: Comfortaa;
 
 //header values
 @headerBackGround: #FF4081;
@@ -57,10 +58,12 @@ body::-webkit-scrollbar-thumb {
     &-el {
       list-style: none;
       margin-left: 10%;
-&-line{
-  position: absolute;
-  transform: .3s;
-}
+
+      &-line {
+        position: absolute;
+        transform: .3s;
+      }
+
       &-link {
         display: block;
         position: relative;
@@ -69,10 +72,142 @@ body::-webkit-scrollbar-thumb {
         line-height: 100%;
         font-size: 100%;
         text-decoration: none;
-        color:#262626;
+        color: #262626;
         transition: .3s;
       }
 
+    }
+  }
+
+  &-burger-menu {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+
+    &-navlink span:after {
+      display: inline-block;
+      width: 2%;
+      height: 15%;
+      background-color: black;
+      transform: rotate(250deg);
+      margin-top: 15%;
+    }
+
+    &-navlink span {
+      display: inline-block;
+      width: 2%;
+      height: 15%;
+      background-color: black;
+      transform: rotate(300deg);
+      //margin-left: 5px;
+    }
+
+    &-navlink span:before,
+    &-navlink span:after {
+      content: "";
+      display: block;
+      transition: 0.3s;
+    }
+
+
+    &-nav:before {
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      margin-left: 10%;
+      margin-top: -7%;
+      border-bottom: 10px solid #EEEEEE;;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+    }
+
+    &-nav {
+      transition: 0.3s;
+      transform-origin: top center;
+      transform: scaleY(0) translateY(20%);
+      opacity: 0;
+      background: #EEEEEE;
+      box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+      border-radius: 10%;
+      width: 100%;
+      height: 100%;
+      padding-top: 2%;
+      padding-bottom: 10%;
+    }
+
+    &-nav-active {
+      opacity: 1;
+      transform: scaleY(1) translateY(0%);
+    }
+
+    &-navlink {
+      display: block;
+      text-decoration: none;
+      font-family: @mainFontfamily;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 20px;
+      letter-spacing: 0.07em;
+      color: @mainBackGround;
+      margin-left: 13px;
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+
+    &-clicker {
+      display: block;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      position: relative;
+    }
+
+    &-clicker span,
+    &-clicker span::before,
+    &-clicker span::after {
+      position: absolute;
+      top: 50%;
+      margin-top: -6%;
+      left: 55%;
+      margin-left: -45%;
+      width: 80%;
+      height: 3px;
+      background: #EEEEEE;
+    }
+
+    &-clicker span::before,
+    &-clicker span::after {
+      content: "";
+      display: block;
+      transition: 0.5s;
+    }
+
+    &-clicker span::before {
+      transform: translateY(-15px);
+    }
+
+    &-clicker span::after {
+      transform: translateY(15px);
+    }
+
+    &-clicker span {
+      height: 0;
+    }
+
+    &-clicker-active span:before {
+      transform: rotate(45deg);
+    }
+
+    &-clicker-active span:after {
+      transform: rotate(-45deg);
+    }
+
+    .line {
+      border: 2px solid #EEEEEE;
+      padding: 0;
+      margin-top: 10px;
     }
   }
 }
@@ -80,42 +215,44 @@ body::-webkit-scrollbar-thumb {
 
 //svg line animation
 
-svg{
-  margin:15px;
+svg {
+  margin: 15px;
 }
 
 ul li span:nth-child(2),
-ul li span:nth-child(4)
-{
+ul li span:nth-child(4) {
   width: 10%;
   height: 100%;
-  background: #9C27B0;
+  background: #EEEEEE;
 }
-ul li span:nth-child(2){
-  top:0;
-  left:0;
+
+ul li span:nth-child(2) {
+  top: 0;
+  left: 0;
   transform: scale(0);
-  transform-origin:top;
+  transform-origin: top;
   transition: transform .3s;
 
 }
-ul li a:hover  span:nth-child(2){
+
+ul li a:hover span:nth-child(2) {
   transform: scale(1);
-  transform-origin:bottom;
+  transform-origin: bottom;
   transition: transform .3s;
 }
 
-ul li span:nth-child(4){
-  top:0;
-  right:0;
+ul li span:nth-child(4) {
+  top: 0;
+  right: 0;
   transform: scale(0);
-  transform-origin:bottom;
+  transform-origin: bottom;
   transition: transform .3s;
 
 }
-ul li a:hover  span:nth-child(4){
+
+ul li a:hover span:nth-child(4) {
   transform: scale(1);
-  transform-origin:top;
+  transform-origin: top;
   transition: transform .3s;
 }
 
@@ -124,11 +261,13 @@ ul li a:hover  span:nth-child(4){
   .app-main-container {
     height: 1700px;
   }
+
   //.app-header-svg-groups{
   //  position: absolute;
   //  right: 8%;
   //}
 }
+
 @media (max-width: 1200px) {
   .app-main-container {
     width: 1300px;
@@ -146,19 +285,20 @@ ul li a:hover  span:nth-child(4){
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px){
-.app-main-container {
+@media (min-width: 768px) and (max-width: 991px) {
+  .app-main-container {
     width: 1000px;
-  height: 1700px;
+    height: 1700px;
 
-}
+  }
 }
 
 @media (max-width: 767px) {
   .app-main-container {
     height: 1700px;
-    width: 766px;
+    width: 800px;
   }
+
   //.app-header-svg-groups{
   //  right: 32%;
   //
@@ -167,9 +307,10 @@ ul li a:hover  span:nth-child(4){
 
 @media (max-width: 480px) {
   .app-main-container {
-    width: 479px;
+    width: 500px;
     height: 1700px;
-    .app-header-svg-groups{
+
+    .app-header-svg-groups {
       right: 52%;
     }
   }
@@ -178,11 +319,37 @@ ul li a:hover  span:nth-child(4){
 @media (max-width: 320px) {
   .app-main-container {
     height: 1700px;
-    width: 320px;
+    width: 326px;
   }
-  .app-header-svg-groups{
+
+  .app-header-svg-groups {
     //position: absolute;
     //right: 400%;
-    margin-right: 100px;
+    //margin-right: 90px;
+    //bottom: 90px;
+    top:-10%;
+    margin-right: 60px;
+  }
+  .app-burger-menu{
+    top:50%;
+    left: 40%;
+  }
+ .app-svg-groups{
+   top:-50%;
+    &-el {
+      //background: darkblue;
+    &-line{
+      //position: absolute;
+      //right: 40px;
+    }
+      &-link {
+     right: 40px;
+      }
+    }
+  }
+
+  svg {
+    margin-left: 10px;
+    left: 60px;
   }
 }
