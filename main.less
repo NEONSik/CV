@@ -1,13 +1,13 @@
 //main settings
 @mainBackGround: #424242;
-@mainContainerHeigth: 1480px;
+//@mainContainerHeigth:;
 @mainContainerWidth: 1920px;
 @mainFontfamily: Comfortaa;
 
 //header values
 @headerBackGround: #FF4081;
 @headerWidth: 100%;
-@headerHeigth: 10%;
+@headerHeigth: 150px;
 
 body {
   padding: 0;
@@ -30,7 +30,7 @@ body::-webkit-scrollbar-thumb {
 .app {
   &-main-container {
     width: @mainContainerWidth;
-    height: @mainContainerHeigth;
+    //height: @mainContainerHeigth;
     background: @mainBackGround;
   }
 
@@ -48,6 +48,14 @@ body::-webkit-scrollbar-thumb {
       width: 15%;
       height: 25%;
     }
+  }
+
+  //body
+  &-body-container {
+    //position: absolute;
+    //margin-top: 70%;
+    //width: 100%;
+    //height: 100%;
   }
 
   &-svg-groups {
@@ -259,7 +267,7 @@ ul li a:hover span:nth-child(4) {
 //media requsets
 @media (max-width: 1300px) {
   .app-main-container {
-    height: 1700px;
+    //height: 1700px;
   }
 
   //.app-header-svg-groups{
@@ -271,7 +279,7 @@ ul li a:hover span:nth-child(4) {
 @media (max-width: 1200px) {
   .app-main-container {
     width: 1300px;
-    height: 1700px;
+    //height: 1700px;
     //.app-header-svg-groups{
     //  right: 38%;
     //}
@@ -281,22 +289,21 @@ ul li a:hover span:nth-child(4) {
 @media (min-width: 992px) and (max-width: 1199px) {
   .app-main-container {
     width: 1199px;
-    height: 1700px;
+    //height: 1700px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .app-main-container {
-    width: 1000px;
-    height: 1700px;
-
+    width: 991px;
+    //height: 1700px;
   }
 }
 
 @media (max-width: 767px) {
   .app-main-container {
-    height: 1700px;
-    width: 800px;
+    //height: 1700px;
+    width: 768px;
   }
 
   //.app-header-svg-groups{
@@ -307,8 +314,8 @@ ul li a:hover span:nth-child(4) {
 
 @media (max-width: 480px) {
   .app-main-container {
-    width: 500px;
-    height: 1700px;
+    width: 767px;
+    //height: 1700px;
 
     .app-header-svg-groups {
       right: 52%;
@@ -318,8 +325,8 @@ ul li a:hover span:nth-child(4) {
 
 @media (max-width: 320px) {
   .app-main-container {
-    height: 1700px;
-    width: 326px;
+    //height: 1700px;
+    width: 480px;
   }
 
   .app-header-svg-groups {
@@ -327,23 +334,27 @@ ul li a:hover span:nth-child(4) {
     //right: 400%;
     //margin-right: 90px;
     //bottom: 90px;
-    top:-10%;
+    top: -10%;
     margin-right: 60px;
   }
-  .app-burger-menu{
-    top:50%;
+
+  .app-burger-menu {
+    top: 50%;
     left: 40%;
   }
- .app-svg-groups{
-   top:-50%;
+
+  .app-svg-groups {
+    top: -50%;
+
     &-el {
       //background: darkblue;
-    &-line{
-      //position: absolute;
-      //right: 40px;
-    }
+      &-line {
+        //position: absolute;
+        //right: 40px;
+      }
+
       &-link {
-     right: 40px;
+        right: 40px;
       }
     }
   }

@@ -14,12 +14,11 @@ body::-webkit-scrollbar-thumb {
 }
 .app-main-container {
   width: 1920px;
-  height: 1480px;
   background: #424242;
 }
 .app-header {
   width: 100%;
-  height: 10%;
+  height: 150px;
   background: #FF4081;
   position: relative;
 }
@@ -201,38 +200,30 @@ ul li a:hover span:nth-child(4) {
   transition: transform 0.3s;
 }
 @media (max-width: 1300px) {
-  .app-main-container {
-    height: 1700px;
-  }
 }
 @media (max-width: 1200px) {
   .app-main-container {
     width: 1300px;
-    height: 1700px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .app-main-container {
     width: 1199px;
-    height: 1700px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .app-main-container {
-    width: 1000px;
-    height: 1700px;
+    width: 991px;
   }
 }
 @media (max-width: 767px) {
   .app-main-container {
-    height: 1700px;
-    width: 800px;
+    width: 768px;
   }
 }
 @media (max-width: 480px) {
   .app-main-container {
-    width: 500px;
-    height: 1700px;
+    width: 767px;
   }
   .app-main-container .app-header-svg-groups {
     right: 52%;
@@ -240,8 +231,7 @@ ul li a:hover span:nth-child(4) {
 }
 @media (max-width: 320px) {
   .app-main-container {
-    height: 1700px;
-    width: 326px;
+    width: 480px;
   }
   .app-header-svg-groups {
     top: -10%;
